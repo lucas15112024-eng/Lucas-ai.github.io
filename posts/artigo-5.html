@@ -1,13 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Como vender serviços de IA para pequenos negócios</title>
-  <link rel="stylesheet" href="../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orbit News - IA & Tecnologia</title>
+<style>
+body { font-family: Arial, sans-serif; background-color:#f4f4f4; margin:0; padding:0; }
+header { background-color:#1a1a1a; color:#fff; padding:20px; text-align:center; }
+header h1 { margin:0; font-size:2.5em; }
+main { max-width:1200px; margin:auto; padding:20px; }
+.tabs { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+.tab { padding:10px 20px; background-color:#ddd; border-radius:6px; cursor:pointer; font-weight:bold; transition:0.3s; }
+.tab.active { background-color:#007bff; color:#fff; }
+.news-content { display:none; background-color:#fff; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); padding:20px; }
+.news-content.active { display:block; }
+.news-content img { width:100%; height:auto; border-radius:6px; cursor:pointer; }
+.news-content h2 { font-size:1.8em; color:#333; margin:10px 0; cursor:pointer; }
+.news-content h3 { font-size:1.2em; color:#555; margin:5px 0 15px; }
+.news-content p { color:#666; line-height:1.6; }
+.actions { display:flex; gap:15px; margin-top:15px; flex-wrap:wrap; }
+.actions button { padding:8px 16px; border:none; border-radius:6px; cursor:pointer; font-weight:bold; transition:0.3s; }
+.like-btn { background-color:#ff4d4d; color:#fff; } .like-btn:hover { background-color:#e60000; }
+.comment-btn { background-color:#007bff; color:#fff; } .comment-btn:hover { background-color:#0056b3; }
+.share-btn { background-color:#28a745; color:#fff; } .share-btn:hover { background-color:#1e7e34; }
+.comment-section { margin-top:15px; display:none; }
+.comment-section input { width:80%; padding:8px; margin-right:10px; border-radius:6px; border:1px solid #ccc; }
+.comment-section button { padding:8px 12px; border-radius:6px; border:none; background-color:#28a745; color:#fff; cursor:pointer; }
+.comments-list p { background:#f1f1f1; padding:10px; border-radius:6px; margin-bottom:5px; }
+</style>
 </head>
 <body>
-  <h1>Como vender serviços de IA para pequenos negócios</h1>
-  <p>Ofereça criação de textos, imagens ou automações usando IA para empresas locais. É rápido de aprender e pode gerar renda extra constante.</p>
-  <a href="../index.html">Voltar ao início</a>
+
+<header>
+<h1>Orbit News - IA & Tecnologia</h1>
+</header>
+
+<main>
+<div class="tabs">
+<div class="tab active" onclick="showTab(1)">Notícia 1</div>
+<div class="tab" onclick="showTab(2)">Notícia 2</div>
+<div class="tab" onclick="showTab(3)">Notícia 3</div>
+<div class="tab" onclick="showTab(4)">Notícia 4</div>
+<div class="tab" onclick="showTab(5)">Notícia 5</div>
+</div>
+
+<!-- Notícia 1 -->
+<div id="news1" class="news-content active">
+<img src="https://images.unsplash.com/photo-1612831455545-bfe3a9ff6a58" alt="IA Esportes" onclick="openNews('https://exemplo.com/noticia11')">
+<h2 onclick="openNews('https://exemplo.com/noticia11')">IA Analisa Desempenho de Atletas Profissionais</h2>
+<h3>Algoritmos ajudam a otimizar treinos e estratégias de jogo</h3>
+<p>Ferramentas de inteligência artificial monitoram movimentos, resistência e desempenho dos atletas, fornecendo relatórios detalhados para treinadores ajustarem treinos e melhorar resultados.</p>
+<div class="actions">
+<button class="like-btn" onclick="likeNews(this)">👍 0</button>
+<button class="comment-btn" onclick="toggleComment(this)">💬 Comentar</button>
+<button class="share-btn" onclick="shareNews('https://exemplo.com/noticia11')">🔗 Compartilhar</button>
+</div>
+<div class="comment-section">
+<input type="text" placeholder="Digite seu comentário">
+<button onclick="addComment(this)">Enviar</button>
+<div class="comments-list"></div>
+</div>
+</div>
+
+<!-- Notícia 2 -->
+<div id="news2" class="news-content">
+<img src="https://images.unsplash.com/photo-1612831665063-cf52a8b2c9cd" alt="IA Finanças" onclick="openNews('https://exemplo.com/noticia12')">
+<h2 onclick="openNews('https://exemplo.com/noticia12')">IA Prevendo Tendências do Mercado Financeiro</h2>
+<h3>Investidores utilizam algoritmos para decisões mais precisas</h3>
+<p>Inteligência artificial analisa milhões de dados financeiros e econômicos para prever flutuações de mercado, auxiliando traders e empresas na tomada de decisões estratégicas.</p>
+<div class="actions">
+<button class="like-btn" onclick="likeNews(this)">👍 0</button>
+<button class="comment-btn" onclick="toggleComment(this)">💬 Comentar</button>
+<button class="share-btn" onclick="shareNews('https://exemplo.com/noticia12')">🔗 Compartilhar</button>
+</div>
+<div class="comment-section">
+<input type="text" placeholder="Digite seu comentário">
+<button onclick="addComment(this)">Enviar</button>
+<div class="comments-list"></div>
+</div>
+</div>
+
+<!-- Notícia 3 -->
+<div id="news3" class="news-content">
+<img src="https://images.unsplash.com/photo-1612831665050-7fcac52a22f6" alt="IA Agricultura" onclick="openNews('https://exemplo.com/noticia13')">
+<h2 onclick="openNews('https://exemplo.com/noticia13')">IA Revoluciona Agricultura de Precisão</h2>
+<h3>Drones e sensores inteligentes monitoram culturas e colheitas</h3>
+<p>Algoritmos ajudam agricultores a prever pragas, otimizar irrigação e melhorar a produtividade das colheitas, tornando a agricultura mais sustentável e eficiente.</p>
+<div class="actions">
+<button class="like-btn" onclick="likeNews(this)">👍 0</button>
+<button class="comment-btn" onclick="toggleComment(this)">💬 Comentar</button>
+<button class="share-btn" onclick="shareNews('https://exemplo.com/noticia13')">🔗 Compartilhar</button>
+</div>
+<div class="comment-section">
+<input type="text" placeholder="Digite seu comentário">
+<button onclick="addComment(this)">Enviar</button>
+<div class="comments-list"></div>
+</div>
+</div>
+
+<!-- Notícia 4 -->
+<div id="news4" class="news-content">
+<img src="https://images.unsplash.com/photo-1612831665060-6b2b7c2a0cde" alt="IA Música" onclick="openNews('https://exemplo.com/noticia14')">
+<h2 onclick="openNews('https://exemplo.com/noticia14')">IA Compositora Cria Trilhas Sonoras Originais</h2>
+<h3>Música gerada por IA é usada em jogos e filmes</h3>
+<p>Algoritmos de inteligência artificial conseguem criar trilhas sonoras personalizadas para diversas mídias, ajustando ritmo, harmonia e estilo ao contexto desejado.</p>
+<div class="actions">
+<button class="like-btn" onclick="likeNews(this)">👍 0</button>
+<button class="comment-btn" onclick="toggleComment(this)">💬 Comentar</button>
+<button class="share-btn" onclick="shareNews('https://exemplo.com/noticia14')">🔗 Compartilhar</button>
+</div>
+<div class="comment-section">
+<input type="text" placeholder="Digite seu comentário">
+<button onclick="addComment(this)">Enviar</button>
+<div class="comments-list"></div>
+</div>
+</div>
+
+<!-- Notícia 5 -->
+<div id="news5" class="news-content">
+<img src="https://images.unsplash.com/photo-1612831665056-3e7a3d8c9e4d" alt="IA Cidades" onclick="openNews('https://exemplo.com/noticia15')">
+<h2 onclick="openNews('https://exemplo.com/noticia15')">Cidades Inteligentes Usam IA para Planejamento Urbano</h2>
+<h3>Tráfego, energia e segurança são monitorados em tempo real</h3>
+<p>Sistemas de inteligência artificial auxiliam na gestão de recursos urbanos, prevendo congestionamentos, otimizando consumo de energia e aumentando segurança pública.</p>
+<div class="actions">
+<button class="like-btn" onclick="likeNews(this)">👍 0</button>
+<button class="comment-btn" onclick="toggleComment(this)">💬 Comentar</button>
+<button class="share-btn" onclick="shareNews('https://exemplo.com/noticia15')">🔗 Compartilhar</button>
+</div>
+<div class="comment-section">
+<input type="text" placeholder="Digite seu comentário">
+<button onclick="addComment(this)">Enviar</button>
+<div class="comments-list"></div>
+</div>
+</div>
+
+</main>
+
+<script>
+function showTab(n){ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); document.querySelectorAll('.news-content').forEach(c=>c.classList.remove('active')); document.querySelector(`.tab:nth-child(${n})`).classList.add('active'); document.getElementById('news'+n).classList.add('active'); }
+function likeNews(btn){ let c=parseInt(btn.innerText.split(' ')[1]); btn.innerText=`👍 ${c+1}`; }
+function toggleComment(btn){ const sec=btn.closest('.news-content').querySelector('.comment-section'); sec.style.display=sec.style.display==='none'?'block':'none'; }
+function addComment(btn){ const input=btn.previousElementSibling; const txt=input.value.trim(); if(!txt) return; const list=btn.nextElementSibling; const p=document.createElement('p'); p.innerText=txt; list.appendChild(p); input.value=''; }
+function openNews(url){ window.open(url,'_blank'); }
+function shareNews(url){ const txt=`Confira esta notícia: ${url}`; if(navigator.share){ navigator.share({title:'Orbit News',text:txt,url:url}); } else { prompt('Copie este link para compartilhar:',url); } }
+</script>
+
 </body>
-</html
+</html>
