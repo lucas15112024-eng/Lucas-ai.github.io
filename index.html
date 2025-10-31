@@ -1,60 +1,247 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portal IA News - por Lucas</title>
-<meta name="description" content="Notícias, dicas e tutoriais sobre Inteligência Artificial. Fique por dentro das novidades do mundo da IA.">
-<style>
-  body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f5f5f5; color:#333;}
-  header {background:linear-gradient(90deg, #1e90ff, #00bcd4); color:white; padding:20px; position:sticky; top:0; z-index:1000;}
-  header h1 {margin:0; font-size:2em;}
-  nav {margin-top:10px;}
-  nav a {color:white; margin:0 15px; text-decoration:none; font-weight:bold;}
-  nav a:hover {text-decoration:underline;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt News</title>
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset e fontes */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
 
-  .container {max-width:1100px; margin:20px auto; padding:0 20px;}
-  .section {background:white; padding:20px; border-radius:10px; margin-bottom:20px; box-shadow:0 3px 10px rgba(0,0,0,0.1);}
-  .section h2 {color:#1e90ff; border-bottom:3px solid #00bcd4; padding-bottom:5px;}
-  
-  .news-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px;}
-  .news-card {background:#fafafa; border-radius:10px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); transition:transform 0.3s;}
-  .news-card:hover {transform:scale(1.02);}
-  .news-card img {width:100%; height:200px; object-fit:cover;}
-  .news-card h3 {padding:10px; margin:0; font-size:1.1em; color:#222;}
-  .news-card p {padding:0 10px 15px 10px; margin:0; font-size:0.95em;}
-  .ad-space {background:#fff8b3; text-align:center; padding:20px; font-weight:bold; margin:20px 0; border-radius:10px;}
+    body {
+      background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+      color: #333;
+    }
 
-  .support {background:#ff6600; color:white; text-align:center; padding:20px; font-size:1.2em; border-radius:10px; font-weight:bold; margin-top:30px;}
-  footer {background:#333; color:white; text-align:center; padding:20px; margin-top:30px;}
-  footer p {margin:5px 0;}
-</style>
+    /* Cabeçalho */
+    header {
+      background-color: #ff4b4b;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 28px;
+    }
+
+    /* Logo */
+    .logo {
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      color: #ff4b4b;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* Menu */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Conteúdo principal */
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card-content p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .card-content a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ff4b4b;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .card-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* Espaço para anúncios */
+    .ad-banner {
+      background-color: #ffd700;
+      color: #333;
+      width: 100%;
+      max-width: 960px;
+      height: 100px;
+      margin: 20px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Rodapé */
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #ff4b4b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsivo */
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <h1>Portal IA News</h1>
-  <nav>
-    <a href="#noticias">Notícias</a>
-    <a href="#tutoriais">Tutoriais</a>
-    <a href="#dicas">Dicas</a>
-    <a href="#contato">Contato</a>
-  </nav>
-</header>
+  <!-- Cabeçalho -->
+  <header>
+    <h1><div class="logo">PN</div> Prompt News</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Prompts de IA</a></li>
+        <li><a href="#">Tecnologia</a></li>
+        <li><a href="#">Monetização</a></li>
+        <li><a href="#">Dicas</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="container">
+  <!-- Banner de anúncio topo -->
+  <div class="ad-banner">Espaço para Anúncio</div>
 
-  <section class="section" id="noticias">
-    <h2>📰 Últimas Notícias</h2>
-    <div class="news-grid">
-      <div class="news-card">
-        <img src="https://images.unsplash.com/photo-1682685794748-47331a3f6b4b?w=800&q=80" alt="Notícia 1">
-        <h3>Nova IA cria vídeos realistas a partir de texto</h3>
-        <p>Pesquisadores revelam tecnologia que transforma descrições em vídeos completos com som e movimento.</p>
+  <!-- Conteúdo principal -->
+  <div class="main">
+
+    <!-- Card de notícia -->
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180.png?text=Prompt+IA+1" alt="Notícia 1">
+      <div class="card-content">
+        <h3>Como ganhar dinheiro com prompts de IA</h3>
+        <p>Descubra estratégias práticas para monetizar prompts de inteligência artificial em diferentes plataformas.</p>
+        <a href="#">Leia mais</a>
       </div>
-      <div class="news-card">
-        <img src="https://images.unsplash.com/photo-1633265486064-086b219458ec?w=800&q=80" alt="Notícia 2">
-        <h3>Ferramenta gratuita melhora imagens com um clique</h3>
-        <p>Nova IA de código aberto promete substituir Photoshop em tarefas básicas com qualidade profissional.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180.png?text=Notícia+Tech" alt="Notícia 2">
+      <div class="card-content">
+        <h3>Novas ferramentas de IA para designers</h3>
+        <p>Ferramentas que podem otimizar seu trabalho criativo e aumentar sua produtividade.</p>
+        <a href="#">Leia mais</a>
       </div>
-      <
+    </div>
+
+    <!-- Banner de anúncio entre notícias -->
+    <div class="ad-banner">Espaço para Anúncio</div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180.png?text=Monetização" alt="Notícia 3">
+      <div class="card-content">
+        <h3>Sites e apps para vender seus prompts</h3>
+        <p>Plataformas recomendadas para vender seus prompts e serviços de inteligência artificial.</p>
+        <a href="#">Leia mais</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://via.placeholder.com/300x180.png?text=Novidades+IA" alt="Notícia 4">
+      <div class="card-content">
+        <h3>Tendências em Inteligência Artificial 2025</h3>
+        <p>Veja o que esperar da IA nos próximos anos e como se preparar para novas oportunidades.</p>
+        <a href="#">Leia mais</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Banner de anúncio rodapé -->
+  <div class="ad-banner">Espaço para Anúncio</div>
+
+  <!-- Rodapé -->
+  <footer>
+    Colabore com o criador: Pix (44)99816-7310
+  </footer>
+
+</body>
+</html>
