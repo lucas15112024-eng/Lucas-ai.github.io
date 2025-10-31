@@ -1,37 +1,88 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #fafafa;
-  color: #333;
+/* Reset simples */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
 header {
   background: #4CAF50;
   color: white;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
 }
-h2 {
-  color: #4CAF50;
+
+header p {
+  font-size: 1rem;
+  margin-top: 5px;
 }
-ul {
+
+/* Menu / navegação */
+nav {
+  background: #333;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column; /* bom pro celular */
   list-style-type: none;
   padding: 0;
 }
-li {
-  margin: 10px 0;
+
+nav li {
+  border-bottom: 1px solid #444;
 }
-a {
-  color: #4CAF50;
+
+nav a {
+  display: block;
+  color: white;
   text-decoration: none;
-  font-weight: bold;
+  padding: 12px;
+  transition: 0.3s;
 }
-a:hover {
-  text-decoration: underline;
+
+nav a:hover {
+  background: #4CAF50;
 }
+
+/* Seção de introdução */
+.intro {
+  padding: 20px;
+  background: #e8f5e9;
+  margin: 15px;
+  border-radius: 8px;
+}
+
+/* Rodapé */
 footer {
   text-align: center;
-  padding: 10px;
-  background: #eee;
+  padding: 15px;
+  background: #333;
+  color: white;
   margin-top: 20px;
+}
+
+/* Responsividade básica */
+@media(min-width: 600px) {
+  nav ul {
+    flex-direction: row;
+  }
+  nav li {
+    border-bottom: none;
+    border-right: 1px solid #444;
+  }
+  nav li:last-child {
+    border-right: none;
+  }
+  nav a {
+    padding: 15px 20px;
+  }
 }
