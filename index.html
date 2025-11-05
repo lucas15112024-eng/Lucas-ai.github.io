@@ -3,245 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompt News</title>
-  <!-- Fonte -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* Reset e fontes */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
-
-    body {
-      background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
-      color: #333;
-    }
-
-    /* Cabeçalho */
-    header {
-      background-color: #ff4b4b;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 28px;
-    }
-
-    /* Logo */
-    .logo {
-      width: 40px;
-      height: 40px;
-      background-color: #fff;
-      color: #ff4b4b;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    /* Menu */
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Conteúdo principal */
-    .main {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: #fff;
-      width: 300px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .card-content h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .card-content p {
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .card-content a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #ff4b4b;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .card-content a:hover {
-      text-decoration: underline;
-    }
-
-    /* Espaço para anúncios */
-    .ad-banner {
-      background-color: #ffd700;
-      color: #333;
-      width: 100%;
-      max-width: 960px;
-      height: 100px;
-      margin: 20px auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: bold;
-      font-size: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-
-    /* Rodapé */
-    footer {
-      background-color: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #ff4b4b;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsivo */
-    @media (max-width: 768px) {
-      .main {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  <title>Desafio 30 Dias - Treino em Casa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header>
-    <h1><div class="logo">PN</div> Prompt News</h1>
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Prompts de IA</a></li>
-        <li><a href="#">Tecnologia</a></li>
-        <li><a href="#">Monetização</a></li>
-        <li><a href="#">Dicas</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Banner de anúncio topo -->
-  <div class="ad-banner">Espaço para Anúncio</div>
-
-  <!-- Conteúdo principal -->
-  <div class="main">
-
-    <!-- Card de notícia -->
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180.png?text=Prompt+IA+1" alt="Notícia 1">
-      <div class="card-content">
-        <h3>Como ganhar dinheiro com prompts de IA</h3>
-        <p>Descubra estratégias práticas para monetizar prompts de inteligência artificial em diferentes plataformas.</p>
-        <a href="#">Leia mais</a>
+  <!-- Tela de Boas-vindas -->
+  <div id="welcome-screen" class="screen active">
+    <div class="container">
+      <div class="hero">
+        <h1>💪 Desafio 30 Dias</h1>
+        <p class="subtitle">Transforme seu corpo em casa, sem equipamentos!</p>
+        <div class="stats">
+          <div class="stat-item">
+            <span class="stat-number">30</span>
+            <span class="stat-label">Dias</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Equipamentos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Resultados</span>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="showFocusSelection()">Começar Agora</button>
       </div>
     </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180.png?text=Notícia+Tech" alt="Notícia 2">
-      <div class="card-content">
-        <h3>Novas ferramentas de IA para designers</h3>
-        <p>Ferramentas que podem otimizar seu trabalho criativo e aumentar sua produtividade.</p>
-        <a href="#">Leia mais</a>
-      </div>
-    </div>
-
-    <!-- Banner de anúncio entre notícias -->
-    <div class="ad-banner">Espaço para Anúncio</div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180.png?text=Monetização" alt="Notícia 3">
-      <div class="card-content">
-        <h3>Sites e apps para vender seus prompts</h3>
-        <p>Plataformas recomendadas para vender seus prompts e serviços de inteligência artificial.</p>
-        <a href="#">Leia mais</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://via.placeholder.com/300x180.png?text=Novidades+IA" alt="Notícia 4">
-      <div class="card-content">
-        <h3>Tendências em Inteligência Artificial 2025</h3>
-        <p>Veja o que esperar da IA nos próximos anos e como se preparar para novas oportunidades.</p>
-        <a href="#">Leia mais</a>
-      </div>
-    </div>
-
   </div>
 
-  <!-- Banner de anúncio rodapé -->
-  <div class="ad-banner">Espaço para Anúncio</div>
+  <!-- Seleção de Foco -->
+  <div id="focus-screen" class="screen">
+    <div class="container">
+      <button class="btn-back" onclick="showWelcome()">← Voltar</button>
+      <h2>Escolha seu foco</h2>
+      <p class="section-subtitle">Qual parte do corpo você quer trabalhar?</p>
+      
+      <div class="focus-grid">
+        <div class="focus-card" onclick="showLevelSelection('abdomen')">
+          <div class="focus-icon">🔥</div>
+          <h3>Abdômen</h3>
+          <p>Barriga tanquinho em 30 dias</p>
+        </div>
+        
+        <div class="focus-card" onclick="showLevelSelection('bracos')">
+          <div class="focus-icon">💪</div>
+          <h3>Braços</h3>
+          <p>Bíceps e tríceps definidos</p>
+        </div>
+        
+        <div class="focus-card" onclick="showLevelSelection('pernas')">
+          <div class="focus-icon">🦵</div>
+          <h3>Pernas</h3>
+          <p>Pernas fortes e torneadas</p>
+        </div>
+        
+        <div class="focus-card" onclick="showLevelSelection('gluteos')">
+          <div class="focus-icon">🍑</div>
+          <h3>Glúteos</h3>
+          <p>Bumbum empinado e firme</p>
+        </div>
+        
+        <div class="focus-card" onclick="showLevelSelection('corpo-todo')">
+          <div class="focus-icon">⚡</div>
+          <h3>Corpo Todo</h3>
+          <p>Treino completo e balanceado</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- Rodapé -->
-  <footer>
-    Colabore com o criador: Pix (44)99816-7310
-  </footer>
+  <!-- Seleção de Nível -->
+  <div id="level-screen" class="screen">
+    <div class="container">
+      <button class="btn-back" onclick="showFocusSelection()">← Voltar</button>
+      <h2>Escolha seu nível</h2>
+      <p class="section-subtitle">Seja honesto para melhores resultados!</p>
+      
+      <div class="level-grid">
+        <div class="level-card" onclick="startChallenge('iniciante')">
+          <div class="level-badge">🌱</div>
+          <h3>Iniciante</h3>
+          <p>Nunca treinei ou parei há muito tempo</p>
+          <ul>
+            <li>10-15 min por dia</li>
+            <li>Exercícios básicos</li>
+            <li>Progressão gradual</li>
+          </ul>
+        </div>
+        
+        <div class="level-card" onclick="startChallenge('intermediario')">
+          <div class="level-badge">🔥</div>
+          <h3>Intermediário</h3>
+          <p>Já tenho alguma experiência</p>
+          <ul>
+            <li>15-20 min por dia</li>
+            <li>Exercícios moderados</li>
+            <li>Desafio equilibrado</li>
+          </ul>
+        </div>
+        
+        <div class="level-card" onclick="startChallenge('avancado')">
+          <div class="level-badge">⚡</div>
+          <h3>Avançado</h3>
+          <p>Treino regularmente</p>
+          <ul>
+            <li>20-30 min por dia</li>
+            <li>Exercícios intensos</li>
+            <li>Máximo desafio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- Dashboard Principal -->
+  <div id="dashboard-screen" class="screen">
+    <div class="container">
+      <div class="header">
+        <div>
+          <h2>Meu Desafio</h2>
+          <p class="focus-label" id="current-focus"></p>
+        </div>
+        <button class="btn-settings" onclick="resetChallenge()">⚙️</button>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-header">
+          <h3>Seu Progresso</h3>
+          <span class="day-counter">Dia <span id="current-day">1</span>/30</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="progress-text" id="progress-text">Você está no começo da jornada!</p>
+      </div>
+
+      <div class="today-workout">
+        <h3>Treino de Hoje</h3>
+        <div id="workout-preview"></div>
+        <button class="btn btn-primary btn-large" onclick="startWorkout()">Iniciar Treino</button>
+      </div>
+
+      <div class="calendar">
+        <h3>Calendário de 30 Dias</h3>
+        <div class="calendar-grid" id="calendar-grid"></div>
+      </div>
+
+      <!-- Banner de Monetização -->
+      <div class="ad-banner">
+        <p>💰 Apoie este projeto!</p>
+        <p class="pix-info">PIX: (44)99816-7310</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela de Treino -->
+  <div id="workout-screen" class="screen">
+    <div class="workout-container">
+      <div class="workout-header">
+        <button class="btn-close" onclick="pauseWorkout()">✕</button>
+        <div class="workout-progress">
+          <span id="exercise-counter">1/8</span>
+        </div>
+      </div>
+
+      <div class="exercise-display">
+        <div class="exercise-animation" id="exercise-animation">
+          <div class="exercise-emoji" id="exercise-emoji">💪</div>
+        </div>
+        
+        <h2 id="exercise-name">Aquecimento</h2>
+        <p id="exercise-description">Prepare-se para começar!</p>
+        
+        <div class="timer-display">
+          <div class="timer-circle">
+            <svg class="timer-svg" viewBox="0 0 100 100">
+              <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+              <circle class="timer-progress" id="timer-progress" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="timer-text" id="timer-text">00:30</div>
+          </div>
+        </div>
+
+        <div class="exercise-tips" id="exercise-tips">
+          <h4>💡 Dicas:</h4>
+          <ul id="tips-list"></ul>
+        </div>
+
+        <div class="workout-controls">
+          <button class="btn btn-secondary" onclick="skipExercise()">Pular</button>
+          <button class="btn btn-primary" id="play-pause-btn" onclick="toggleTimer()">▶️ Iniciar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tela de Conclusão -->
+  <div id="completion-screen" class="screen">
+    <div class="container">
+      <div class="completion-content">
+        <div class="celebration">🎉</div>
+        <h2>Parabéns!</h2>
+        <p class="completion-message" id="completion-message">Você completou o treino de hoje!</p>
+        
+        <div class="completion-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="exercises-completed">8</span>
+            <span class="stat-label">Exercícios</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="time-spent">15</span>
+            <span class="stat-label">Minutos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" id="calories-burned">120</span>
+            <span class="stat-label">Calorias</span>
+          </div>
+        </div>
+
+        <div class="motivational-quote" id="motivational-quote">
+          "A disciplina é a ponte entre objetivos e conquistas."
+        </div>
+
+        <button class="btn btn-primary btn-large" onclick="completeWorkout()">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
